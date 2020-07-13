@@ -46,8 +46,7 @@
     @foreach($orders as $key => $order )
             <tr id="{{route('update', ['id' => $order->order_id])}}">
                 <td class="text-center">
-                    <label class="checkbox-horizontal">
-                    </label>
+                    {{$order->order_id}}
                 </td>
                 <td class="text-center" ng-bind="ls.order_created*1000 | date: vm.dateFormat')}}"></td>
                 <td>{{$order->order_user_name_created}}</td>
@@ -57,7 +56,7 @@
                 <td>{{$order->order_price_post}}</td>
                 <td>
                     <select id="x{{$key}}" class="status" name="order_status">
-                        <option selected value="{{$order->order_status}}"></option>
+                        <option selected value="{{$order->order_status}}">{{$order->order_status}}</option>
                         <option value="{{\App\Demo::xulygap}}">Đơn xử lý gấp</option>
                         <option value="{{\App\Demo::baohanh}}">Đơn bảo hành</option>
                         <option value="{{\App\Demo::danggiao}}">Đang giao hàng</option>

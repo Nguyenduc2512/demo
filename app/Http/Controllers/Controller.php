@@ -15,6 +15,7 @@ class Controller extends BaseController
 
     public function index()
     {
+
         $orders = Demo::orderBy('order_id','asc')->paginate(10);
         return view('demo', compact('orders'));
     }
